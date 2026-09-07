@@ -1,0 +1,22 @@
+[general]
+name=Spot Level & Contour Extractor Tool
+qgisMinimumVersion=3.22
+qgisMaximumVersion=4.99
+description=Extract regularly-gridded spot levels and elevation contour lines from a DSM/DTM raster, in any coordinate system.
+about=Two Processing algorithms for drone/photogrammetry survey workflows: (1) Spot Levels - samples elevation at a regular grid interval (1m, 2m, 3m, or any custom spacing) and exports points as CSV, Shapefile, and/or KML; (2) Contours - generates elevation contour lines at a chosen interval and exports them as Shapefile, DXF, DWG, and/or KML. Both accept a raster in any coordinate system: a raster in a geographic CRS (plain latitude/longitude degrees) is automatically reprojected in memory to the correct UTM zone first, so interval/spacing values are always true metres on the ground. Requires a handful of third-party Python packages (rasterio, geopandas, scipy, contourpy, ezdxf, pyogrio) to be installed into QGIS's own Python environment - see the plugin's README for the one-time setup command.
+version=1.0.0
+author=Siluvai Abishek
+email=siluvaiabishek3@gmail.com
+
+tracker=https://github.com/siluvaiabishek3-bit/qgis-spot-level-contour-extractor/issues
+repository=https://github.com/siluvaiabishek3-bit/qgis-spot-level-contour-extractor
+homepage=https://github.com/siluvaiabishek3-bit/qgis-spot-level-contour-extractor
+
+category=Raster
+icon=icon.png
+experimental=True
+deprecated=False
+
+tags=dsm,dtm,spot levels,contour,elevation,survey,drone,photogrammetry,raster,uav,processing
+
+hasProcessingProvider=yes
