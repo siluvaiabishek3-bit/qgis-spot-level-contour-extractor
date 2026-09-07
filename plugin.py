@@ -73,4 +73,4 @@ class SpotLevelContourPlugin:
         except Exception:
             # Headless / no GUI context (e.g. QGIS Server) - fall back to the log.
             from qgis.core import QgsMessageLog, Qgis
-            QgsMessageLog.logMessage(msg, "Spot Level & Contour Extractor Tool", Qgis.Warning)
+            QgsMessageLog.logMessage(msg, "Spot Level & Contour Extractor Tool", Qgis.MessageLevel.Warning)
