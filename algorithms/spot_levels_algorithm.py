@@ -86,7 +86,7 @@ class SpotLevelsAlgorithm(QgsProcessingAlgorithm):
 
         param = QgsProcessingParameterNumber(
             self.GRID_INTERVAL, "Grid interval (metres)",
-            type=QgsProcessingParameterNumber.Double, defaultValue=2.0, minValue=0.0001,
+            type=QgsProcessingParameterNumber.Type.Double, defaultValue=2.0, minValue=0.0001,
         )
         self.addParameter(param)
 
