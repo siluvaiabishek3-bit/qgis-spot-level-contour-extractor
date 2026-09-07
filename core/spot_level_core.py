@@ -265,7 +265,7 @@ def _crs_units(crs) -> str:
         if pyproj_crs.axis_info:
             return pyproj_crs.axis_info[0].unit_name
     except Exception:
-        pass
+        return "unknown"
     return "unknown"
 
 
