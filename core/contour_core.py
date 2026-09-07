@@ -198,7 +198,7 @@ def _simplify_lines(lines: list, tolerance: float) -> list:
 def compute_contour_stats(lines: list, interval: float, crs, data_min: float, data_max: float) -> dict:
     if not lines:
         return {}
-    elevations = sorted({round(l["elevation"], 6) for l in lines})
+    elevations = sorted({round(ln["elevation"], 6) for ln in lines})
     return {
         "segment_count": len(lines),
         "level_count": len(elevations),
@@ -218,9 +218,9 @@ def compute_contour_stats(lines: list, interval: float, crs, data_min: float, da
 def export_contours_shp(lines: list, crs, out_path: str) -> str:
     if not _HAS_GEOPANDAS:
         raise ContourError("geopandas/shapely are required for Shapefile export.")
-    geometry = [LineString(l["coords"]) for l in lines]
+    geometry = [LineString(ln["coords"]) for ln in lines]
     gdf = gpd.GeoDataFrame(
-        {"Contour_ID": range(1, len(lines) + 1), "Elev_Z": [round(l["elevation"], 4) for l in lines]},
+        {"Contour_ID": range(1, len(lines) + 1), "Elev_Z": [round(ln["elevation"], 4) for ln in lines]},
         geometry=geometry,
         crs=crs,
     )
