@@ -89,18 +89,18 @@ class ContoursAlgorithm(QgsProcessingAlgorithm):
 
         self.addParameter(QgsProcessingParameterNumber(
             self.CONTOUR_INTERVAL, "Contour interval (metres)",
-            type=QgsProcessingParameterNumber.Double, defaultValue=1.0, minValue=0.0001,
+            type=QgsProcessingParameterNumber.Type.Double, defaultValue=1.0, minValue=0.0001,
         ))
 
         self.addParameter(QgsProcessingParameterNumber(
             self.SMOOTH_SIGMA, "Surface smoothing sigma (pixels, 0 = none)",
-            type=QgsProcessingParameterNumber.Double, defaultValue=0.0, minValue=0.0,
+            type=QgsProcessingParameterNumber.Type.Double, defaultValue=0.0, minValue=0.0,
             optional=True,
         ))
 
         self.addParameter(QgsProcessingParameterNumber(
             self.SIMPLIFY_TOLERANCE, "Simplify tolerance (metres, 0 = keep every vertex)",
-            type=QgsProcessingParameterNumber.Double, defaultValue=0.0, minValue=0.0,
+            type=QgsProcessingParameterNumber.Type.Double, defaultValue=0.0, minValue=0.0,
             optional=True,
         ))
 
